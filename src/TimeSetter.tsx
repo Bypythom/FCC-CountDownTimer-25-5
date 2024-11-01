@@ -23,7 +23,7 @@ const TimeSetter: React.FC<TimerSetterProps> = ({
             id={`${type}-decrement`}>
             <FaArrowDown />
         </button>
-            <span id={`${type}-length`}>{time > interval}</span>
+            <span id={type === "session" ? "session-length" : "break-length"}>{time / 60}</span>
         <button onClick={() => (time < max ? setTime(time + interval) : null)} 
             id={`${type}-increment`}>
             <FaArrowUp />
